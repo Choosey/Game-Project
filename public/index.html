@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Wordle Clone</title>
+<link rel="stylesheet" href="UI.css">
+</head>
+
+<body>
+
+<header>WORDLE BUT ∞</header>
+
+<!-- MENU -->
+<div id="menu" class="screen">
+<button class="main-btn" onclick="startGame()">Play</button>
+<button class="main-btn" onclick="openHowToPlay()">How to Play</button>
+</div>
+
+<!-- HOW TO PLAY -->
+<div id="howToPlay" class="screen hidden">
+<h1>How To Play</h1>
+
+<div class="rules">
+<p>Guess the 5-letter word in 6 tries.</p>
+<ul>
+<li>Each guess must be a valid word</li>
+<li>Press Enter to submit</li>
+<li>Colors show how close you are</li>
+</ul>
+
+<div class="example">
+<div class="tile correct">W</div>
+<p>Correct position</p>
+</div>
+
+<div class="example">
+<div class="tile present">O</div>
+<p>Wrong position</p>
+</div>
+
+<div class="example">
+<div class="tile absent">R</div>
+<p>Not in word</p>
+</div>
+</div>
+
+<button class="main-btn" onclick="startGame()">Start Game</button>
+<button class="back" onclick="goMenu()">Back</button>
+</div>
+
+<!-- GAME -->
+<div id="game" class="screen hidden">
+
+<div class="board" id="board"></div>
+
+<div class="keyboard" id="keyboard"></div>
+
+<button class="back" onclick="goMenu()">Back</button>
+<button class="main-btn" onclick="restartGame()">Restart</button>
+
+</div>
+
+<div id="winText" class="win-text hidden">
+    YOU WON !! <br>
+    <span>Great Job!</span>
+</div>
+
+<script src="script-connected.js"></script>
+
+
+</body>
+</html>
