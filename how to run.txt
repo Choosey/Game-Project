@@ -1,0 +1,161 @@
+========================================
+WORDLE GAME - C++ BACKEND WITH WEB FRONTEND
+========================================
+
+AUTHORS:
+- Keyon Bertrand: Game engine, server, data structures (stack, queue, deque, vector)
+- Alexis Waldron: Difficulty system
+- Jayden Fergus: Word validation and letter coloring
+- Naeem Augustine: Word system, binary search, merge sort
+
+========================================
+FILES NEEDED TO RUN THE GAME
+========================================
+
+MAIN FOLDER (C++ files):
+- wordle_complete.cpp (main game server)
+- wordle.exe (created after compiling)
+
+PUBLIC FOLDER (web files):
+- public/index.html (game interface)
+- public/image.png (loss background for Easter egg)
+- public/win.png (win background for Easter egg)
+
+NOTE: The public folder must be in the SAME folder as wordle_complete.cpp
+
+========================================
+HOW TO RUN THE GAME
+========================================
+
+STEP 1: Install a C++ Compiler (if not already installed)
+
+Windows:
+- Download MinGW from: https://sourceforge.net/projects/mingw/
+- Install to C:\MinGW
+- Add C:\MinGW\bin to your system PATH
+
+OR download Code::Blocks with MinGW from:
+- https://www.codeblocks.org/downloads/binaries/
+
+STEP 2: Open Command Prompt
+
+Press Windows + R, type "cmd", press Enter
+
+STEP 3: Navigate to your game folder
+
+Type:
+cd C:\Users\keyon\Documents\files (2)
+
+(Replace with your actual folder path)
+
+STEP 4: Compile the C++ code
+
+Type:
+g++ -o wordle.exe wordle_complete.cpp -lws2_32
+
+Wait for compilation to finish. You should see no errors.
+
+STEP 5: Run the game server
+
+Type:
+wordle.exe
+
+You should see:
+========================================
+  WORDLE GAME SERVER RUNNING
+========================================
+  Open: http://localhost:8080
+========================================
+
+STEP 6: Play the game
+
+Open your web browser (Chrome, Edge, Firefox)
+Go to: http://localhost:8080
+
+Click "Play" and start guessing words!
+
+========================================
+HOW TO PLAY
+========================================
+
+- Guess the 5-letter word in 6 tries
+- Type letters using your keyboard or click the on-screen keyboard
+- Press ENTER to submit each guess
+- Press BACKSPACE or ⌫ to delete letters
+
+COLORS:
+- GREEN: Correct letter in correct position
+- YELLOW: Correct letter in wrong position
+- GRAY: Letter not in the word
+
+EASTER EGG:
+- Win the game: win.png background appears with "YOU WON!!" animation
+- Lose 3 times in a row: Special loss background appears (image.png)
+
+========================================
+TROUBLESHOOTING
+========================================
+
+ERROR: "g++ is not recognized"
+SOLUTION: Install MinGW (see Step 1 above)
+
+ERROR: "wordle.exe not found"
+SOLUTION: Make sure you compiled successfully in Step 4
+
+ERROR: "Cannot connect to server" in browser
+SOLUTION: Make sure wordle.exe is running (Command Prompt window open)
+
+ERROR: "Port 8080 already in use"
+SOLUTION: Close other programs using port 8080, or change port in code
+
+ERROR: Images not showing (Easter egg)
+SOLUTION: Make sure image.png and win.png are in the public folder
+
+ERROR: Game not starting when clicking Play
+SOLUTION: Open browser to http://localhost:8080 (not the HTML file directly)
+
+========================================
+STOPPING THE GAME
+========================================
+
+To stop the server:
+- Go back to the Command Prompt window
+- Press Ctrl + C
+
+To restart the game:
+- Run wordle.exe again
+- Refresh your browser at http://localhost:8080
+
+========================================
+WHAT YOUR C++ CODE DEMONSTRATES
+========================================
+
+Data Structures Used:
+- Stack: Guess history for undo functionality
+- Queue: Undo operations queue
+- Deque: Recent guesses sliding window
+- Vector: Indexed guess history access
+- Map: Session storage and letter frequency
+
+Algorithms Used:
+- Binary Search: Word lookup in sorted list
+- Merge Sort: Sorting word lists
+- Validation Algorithm: Green/Yellow/Gray letter detection
+
+Difficulty System:
+- Easy: Common words
+- Medium: Words with repeated letters
+- Hard: Words with all unique letters
+- Auto-adjusts based on win/loss streaks
+
+========================================
+SUPPORT
+========================================
+
+If the game doesn't run:
+1. Make sure all files are in the correct folder structure
+2. Make sure you compiled successfully
+3. Make sure wordle.exe is running before opening browser
+4. Check that port 8080 is not blocked by firewall
+
+========================================
